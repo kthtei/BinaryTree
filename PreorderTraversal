@@ -1,6 +1,7 @@
 
 public class PreorderTraversal {
-    public List<Integer> preorderTraversal(TreeNode root) {
+    /** Using Morris Traversal logic. */
+    public List<Integer> preorderTraversal1(TreeNode root) {
         TreeNode cur = root;
         List<Integer> list = new ArrayList<>();
         if (cur == null) return list;
