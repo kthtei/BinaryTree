@@ -3,7 +3,7 @@ public class InorderTraversal {
     public List<Integer> MorrisInorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         TreeNode cur = root;
-        TreeNode prev;
+        TreeNode prev, tmp;
         while (cur != null) {
             if (cur.left == null) {
                 list.add(cur.val);
@@ -12,7 +12,7 @@ public class InorderTraversal {
                 prev = cur.left;
                 while (prev.right != null) prev = prev.right;
                 prev.right = cur;
-                TreeNode tmp = cur;
+                tmp = cur;
                 cur = cur.left;
                 tmp.left = null;
             }
