@@ -46,6 +46,15 @@ public class PreorderTraversal {
             }                  
         }        
     }
+    
+    /** Simple and better readabe helper method. */
+    private void betterHelper(TreeNode root, List<Integer> list) {        
+        if (root != null) {
+            list.add(root.val);
+            helper(root.left, list);
+            helper(root.right, list)
+        }        
+    }    
 }
 
 
