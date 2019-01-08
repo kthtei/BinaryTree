@@ -1,0 +1,30 @@
+public class InorderTraversal {
+    /** Using Morris Traversal Logic. */
+    public List<Integer> MorrisInorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        TreeNode cur = root;
+        TreeNode prev;
+        while (cur != null) {
+            if (cur.left == null) {
+                list.add(cur.val);
+                cur = cur.right;
+            } else {
+                prev = cur.left;
+                while (prev.right != null) prev = prev.right;
+                prev.right = cur;
+                TreeNode tmp = cur;
+                cur = cur.left;
+                tmp.left = null;
+            }
+        }
+        return list;
+    }
+}
+
+class TreeNode {
+  int val;
+  TreeNode left, right;
+  TreeNode(int val) {
+    this.val = val;
+  }
+}
