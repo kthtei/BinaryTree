@@ -1,0 +1,23 @@
+class PostOrderTraversal {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        helper(root, list);
+        return list;
+    }
+    
+    /** Recursive method. */
+    private void helper(TreeNode root, List<Integer> list) {
+        if (root != null) {
+            helper(root.left, list);
+            helper(root.right, list);
+            list.add(root.val);
+        }
+    }
+    
+    TreeNode {
+      TreeNode left, right;
+      int val;
+      TreeNode(int val) {
+        this.val = val;
+      }
+}
